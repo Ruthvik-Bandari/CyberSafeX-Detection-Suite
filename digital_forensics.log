@@ -1,0 +1,504 @@
+2025-04-17 08:40:06,574 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 00:08:44,292 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 01:31:56,818 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 01:32:20,170 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 01:32:20,184 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 01:32:20,184 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 01:32:20,184 - INFO -  * Restarting with stat
+2025-04-18 01:32:20,752 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 01:32:20,758 - WARNING -  * Debugger is active!
+2025-04-18 01:32:20,773 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 01:32:42,160 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 01:32:54,865 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 01:33:20,018 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 01:33:20,029 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 01:33:20,029 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 01:33:20,030 - INFO -  * Restarting with stat
+2025-04-18 01:33:20,994 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 01:33:20,999 - WARNING -  * Debugger is active!
+2025-04-18 01:33:21,012 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 01:33:29,183 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:29] "GET / HTTP/1.1" 200 -
+2025-04-18 01:33:29,368 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:29] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-04-18 01:33:29,369 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:29] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-04-18 01:33:29,386 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:29] "GET /static/css/animations.css HTTP/1.1" 200 -
+2025-04-18 01:33:31,396 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-18 01:33:32,025 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:32] "GET /feature/security HTTP/1.1" 200 -
+2025-04-18 01:33:32,075 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:32] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 01:33:32,079 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 01:33:32,080 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 01:33:42,059 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:42] "GET / HTTP/1.1" 200 -
+2025-04-18 01:33:42,100 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 01:33:42,102 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 01:33:42,103 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:42] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 01:33:44,719 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:44] "GET /feature/file-signature HTTP/1.1" 200 -
+2025-04-18 01:33:44,747 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 01:33:44,752 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 01:33:44,753 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:44] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 01:33:53,744 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:53] "[35m[1mGET /history HTTP/1.1[0m" 500 -
+2025-04-18 01:33:53,763 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:53] "GET /history?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-04-18 01:33:53,769 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:53] "GET /history?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-04-18 01:33:53,779 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:53] "GET /history?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-04-18 01:33:53,915 - INFO - 127.0.0.1 - - [18/Apr/2025 01:33:53] "[36mGET /history?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-18 01:34:03,747 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:03] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-04-18 01:34:03,872 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:03] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-04-18 01:34:03,874 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:03] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-04-18 01:34:03,985 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:03] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-04-18 01:34:04,060 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:04] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-18 01:34:28,214 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:28] "GET /feature/security HTTP/1.1" 200 -
+2025-04-18 01:34:28,240 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 01:34:28,242 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:28] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 01:34:28,243 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 01:34:33,478 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:33] "GET / HTTP/1.1" 200 -
+2025-04-18 01:34:33,509 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 01:34:33,533 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:33] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 01:34:33,653 - INFO - 127.0.0.1 - - [18/Apr/2025 01:34:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:10:58,985 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:12:26,828 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:15:17,491 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:15:17,512 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:15:17,513 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:15:17,513 - INFO -  * Restarting with stat
+2025-04-18 09:15:18,650 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:15:18,657 - WARNING -  * Debugger is active!
+2025-04-18 09:15:18,685 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:15:32,852 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:15:32,875 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:15:32,876 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:15:32,877 - INFO -  * Restarting with stat
+2025-04-18 09:15:34,081 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:15:34,088 - WARNING -  * Debugger is active!
+2025-04-18 09:15:34,108 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:16:25,474 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:16:25,494 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:16:25,494 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:16:25,495 - INFO -  * Restarting with stat
+2025-04-18 09:16:26,927 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:16:26,940 - WARNING -  * Debugger is active!
+2025-04-18 09:16:26,964 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:17:48,082 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:17:48,127 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:17:48,128 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:17:48,133 - INFO -  * Restarting with stat
+2025-04-18 09:18:11,228 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:18:11,244 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:18:11,244 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:18:11,245 - INFO -  * Restarting with stat
+2025-04-18 09:18:12,422 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:18:12,438 - WARNING -  * Debugger is active!
+2025-04-18 09:18:12,469 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:18:39,841 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:18:39,857 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:18:39,857 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:18:39,857 - INFO -  * Restarting with stat
+2025-04-18 09:18:40,395 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:18:40,399 - WARNING -  * Debugger is active!
+2025-04-18 09:18:40,416 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:18:47,249 - INFO - 127.0.0.1 - - [18/Apr/2025 09:18:47] "GET / HTTP/1.1" 200 -
+2025-04-18 09:18:47,433 - INFO - 127.0.0.1 - - [18/Apr/2025 09:18:47] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-04-18 09:18:47,434 - INFO - 127.0.0.1 - - [18/Apr/2025 09:18:47] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-04-18 09:18:47,435 - INFO - 127.0.0.1 - - [18/Apr/2025 09:18:47] "GET /static/css/animations.css HTTP/1.1" 200 -
+2025-04-18 09:18:49,268 - INFO - 127.0.0.1 - - [18/Apr/2025 09:18:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-18 09:19:04,030 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:04,032 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:04] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:04,165 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:04,166 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:04] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:04,543 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:04,545 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:04] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:07,984 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:07,984 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:07] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:08,514 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:08,514 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:08] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:08,749 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:08,749 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:08] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:11,391 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:11] "GET / HTTP/1.1" 200 -
+2025-04-18 09:19:11,453 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:19:11,459 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:11] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:19:11,461 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:19:16,746 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:16,748 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:16] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:16,904 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:16,906 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:16] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:16,976 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:16,977 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:16] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:22,246 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:22] "GET /feature/timeline HTTP/1.1" 200 -
+2025-04-18 09:19:22,436 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:19:22,443 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:22] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:19:22,444 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:19:25,478 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:25] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-04-18 09:19:25,640 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:25] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-04-18 09:19:25,667 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:25] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-04-18 09:19:25,787 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:25] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-04-18 09:19:25,857 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:25] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-18 09:19:31,771 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:31] "GET / HTTP/1.1" 200 -
+2025-04-18 09:19:31,832 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:31] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:19:31,833 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:19:31,835 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:19:42,399 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:42] "POST /analyze-file HTTP/1.1" 200 -
+2025-04-18 09:19:42,401 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:42] "POST /analyze-file HTTP/1.1" 200 -
+2025-04-18 09:19:42,403 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:42] "POST /analyze-file HTTP/1.1" 200 -
+2025-04-18 09:19:57,107 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:57,109 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:57] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:57,139 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:57,139 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:57] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:19:57,154 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:19:57,155 - INFO - 127.0.0.1 - - [18/Apr/2025 09:19:57] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:21:45,484 - INFO -  * Detected change in '/Users/adityayedavalli/forensic_results/url_analyzer.py', reloading
+2025-04-18 09:21:46,302 - INFO -  * Restarting with stat
+2025-04-18 09:22:55,271 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:22:55,294 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:22:55,294 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:22:55,295 - INFO -  * Restarting with stat
+2025-04-18 09:22:56,784 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:22:56,821 - WARNING -  * Debugger is active!
+2025-04-18 09:22:56,872 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:23:05,082 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:23:15,151 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:23:28,805 - INFO - 127.0.0.1 - - [18/Apr/2025 09:23:28] "GET / HTTP/1.1" 200 -
+2025-04-18 09:23:28,960 - INFO - 127.0.0.1 - - [18/Apr/2025 09:23:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:23:28,966 - INFO - 127.0.0.1 - - [18/Apr/2025 09:23:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:23:28,974 - INFO - 127.0.0.1 - - [18/Apr/2025 09:23:28] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:23:41,974 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:23:41,979 - INFO - 127.0.0.1 - - [18/Apr/2025 09:23:41] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:23:42,031 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:23:42,033 - INFO - 127.0.0.1 - - [18/Apr/2025 09:23:42] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:23:42,058 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:23:42,059 - INFO - 127.0.0.1 - - [18/Apr/2025 09:23:42] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:23:55,080 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:23:55,082 - INFO - 127.0.0.1 - - [18/Apr/2025 09:23:55] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:23:55,108 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:23:55,109 - INFO - 127.0.0.1 - - [18/Apr/2025 09:23:55] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:23:55,112 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:23:55,112 - INFO - 127.0.0.1 - - [18/Apr/2025 09:23:55] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:25:56,184 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:25:56,207 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:25:56,207 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:25:56,208 - INFO -  * Restarting with stat
+2025-04-18 09:25:58,443 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:25:58,456 - WARNING -  * Debugger is active!
+2025-04-18 09:25:58,489 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:26:10,977 - INFO - 127.0.0.1 - - [18/Apr/2025 09:26:10] "GET / HTTP/1.1" 200 -
+2025-04-18 09:26:11,154 - INFO - 127.0.0.1 - - [18/Apr/2025 09:26:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:26:11,176 - INFO - 127.0.0.1 - - [18/Apr/2025 09:26:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:26:11,188 - INFO - 127.0.0.1 - - [18/Apr/2025 09:26:11] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:26:15,196 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:26:15,186 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:26:15,199 - INFO - 127.0.0.1 - - [18/Apr/2025 09:26:15] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:26:15,200 - INFO - 127.0.0.1 - - [18/Apr/2025 09:26:15] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:26:15,216 - ERROR - URL analysis error: 'issues'
+2025-04-18 09:26:15,219 - INFO - 127.0.0.1 - - [18/Apr/2025 09:26:15] "[35m[1mPOST /analyze-url HTTP/1.1[0m" 500 -
+2025-04-18 09:27:20,674 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:27:20,750 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:27:20,751 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:27:20,753 - INFO -  * Restarting with stat
+2025-04-18 09:27:24,919 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:27:24,943 - WARNING -  * Debugger is active!
+2025-04-18 09:27:24,981 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:27:58,686 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:28:19,366 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:28:24,509 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:28:53,273 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:33:28,451 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:33:28,469 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:33:28,469 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:33:28,470 - INFO -  * Restarting with stat
+2025-04-18 09:33:29,297 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:33:29,302 - WARNING -  * Debugger is active!
+2025-04-18 09:33:29,318 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:33:41,640 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:34:31,702 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:34:31,712 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:34:31,712 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:34:31,713 - INFO -  * Restarting with stat
+2025-04-18 09:34:32,263 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:34:32,268 - WARNING -  * Debugger is active!
+2025-04-18 09:34:32,281 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:34:36,361 - INFO - 127.0.0.1 - - [18/Apr/2025 09:34:36] "GET / HTTP/1.1" 200 -
+2025-04-18 09:34:36,622 - INFO - 127.0.0.1 - - [18/Apr/2025 09:34:36] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:34:36,623 - INFO - 127.0.0.1 - - [18/Apr/2025 09:34:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:34:36,624 - INFO - 127.0.0.1 - - [18/Apr/2025 09:34:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:34:45,914 - INFO - Starting URL analysis
+2025-04-18 09:34:45,916 - INFO - Starting URL analysis
+2025-04-18 09:34:45,919 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:34:45,921 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:34:45,922 - INFO - Starting URL analysis
+2025-04-18 09:34:45,927 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:34:46,644 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:34:45.925324', 'security_info': {'ip': '142.250.183.206', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.394318, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:34:46,676 - INFO - 127.0.0.1 - - [18/Apr/2025 09:34:46] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:34:46,677 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:34:45.927737', 'security_info': {'ip': '142.250.183.206', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.419226, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:34:46,718 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:34:45.924826', 'security_info': {'ip': '142.250.183.206', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.417017, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:34:46,720 - INFO - 127.0.0.1 - - [18/Apr/2025 09:34:46] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:34:46,722 - INFO - 127.0.0.1 - - [18/Apr/2025 09:34:46] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:35:13,855 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:35:13,897 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:35:13,897 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:35:13,899 - INFO -  * Restarting with stat
+2025-04-18 09:35:15,709 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:35:15,723 - WARNING -  * Debugger is active!
+2025-04-18 09:35:15,760 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:35:20,398 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:20] "GET / HTTP/1.1" 200 -
+2025-04-18 09:35:20,682 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:35:20,685 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:35:20,686 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:20] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:35:28,826 - INFO - Starting URL analysis
+2025-04-18 09:35:28,830 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:35:28,834 - INFO - Starting URL analysis
+2025-04-18 09:35:28,838 - INFO - Starting URL analysis
+2025-04-18 09:35:28,840 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:35:28,841 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:35:29,347 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:35:28.835776', 'security_info': {'ip': '142.250.182.206', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.322614, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:35:29,377 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:29] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:35:29,386 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:35:28.841417', 'security_info': {'ip': '142.250.182.206', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.304829, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:35:29,392 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:29] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:35:29,459 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:35:28.841562', 'security_info': {'ip': '142.250.182.206', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.293987, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:35:29,464 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:29] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:35:55,738 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:55] "POST /analyze-file HTTP/1.1" 200 -
+2025-04-18 09:35:55,743 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:55] "POST /analyze-file HTTP/1.1" 200 -
+2025-04-18 09:35:55,760 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:55] "POST /analyze-file HTTP/1.1" 200 -
+2025-04-18 09:35:59,144 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:59] "GET / HTTP/1.1" 200 -
+2025-04-18 09:35:59,337 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:35:59,338 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:35:59,350 - INFO - 127.0.0.1 - - [18/Apr/2025 09:35:59] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:02,550 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:02] "GET /feature/security HTTP/1.1" 200 -
+2025-04-18 09:36:02,776 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:02] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:02,780 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:02,793 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:36:05,901 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:05] "GET / HTTP/1.1" 200 -
+2025-04-18 09:36:06,005 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:36:06,029 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:06,171 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:06] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:09,102 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:09] "[32mGET /feature/network HTTP/1.1[0m" 302 -
+2025-04-18 09:36:09,127 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:09] "GET / HTTP/1.1" 200 -
+2025-04-18 09:36:09,311 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:09] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:09,312 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:36:09,314 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:13,575 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:13] "[32mGET /feature/network HTTP/1.1[0m" 302 -
+2025-04-18 09:36:13,609 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:13] "GET / HTTP/1.1" 200 -
+2025-04-18 09:36:13,728 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:13] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:13,728 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:13,731 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:36:17,213 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:17] "GET /feature/memory HTTP/1.1" 200 -
+2025-04-18 09:36:17,389 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:36:17,390 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:17,483 - INFO - 127.0.0.1 - - [18/Apr/2025 09:36:17] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:36:56,504 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:36:56,557 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5010
+2025-04-18 09:36:56,558 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:36:56,562 - INFO -  * Restarting with stat
+2025-04-18 09:36:58,381 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:36:58,394 - WARNING -  * Debugger is active!
+2025-04-18 09:36:58,415 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:37:04,769 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:04] "GET / HTTP/1.1" 200 -
+2025-04-18 09:37:04,954 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:37:04,954 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:04] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-04-18 09:37:04,955 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:04] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:37:16,499 - INFO - Starting URL analysis
+2025-04-18 09:37:16,500 - INFO - Starting URL analysis
+2025-04-18 09:37:16,502 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:37:16,503 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:37:16,504 - INFO - Starting URL analysis
+2025-04-18 09:37:16,505 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:37:16,944 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:37:16.504685', 'security_info': {'ip': '142.250.183.206', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.302747, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:37:16,948 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:16] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:37:17,022 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:37:16.504580', 'security_info': {'ip': '142.250.183.206', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.315716, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:37:17,029 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:17] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:37:17,206 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:37:16.505523', 'security_info': {'ip': '142.250.183.206', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.296753, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:37:17,217 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:17] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:37:28,288 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:28] "GET / HTTP/1.1" 200 -
+2025-04-18 09:37:28,370 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 09:37:28,370 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:28] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:37:28,373 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:37:38,366 - INFO - Starting URL analysis
+2025-04-18 09:37:38,367 - INFO - Starting URL analysis
+2025-04-18 09:37:38,369 - INFO - Analyzing URL: https://chatgpt.com/
+2025-04-18 09:37:38,370 - INFO - Starting URL analysis
+2025-04-18 09:37:38,372 - INFO - Analyzing URL: https://chatgpt.com/
+2025-04-18 09:37:38,373 - INFO - Analyzing URL: https://chatgpt.com/
+2025-04-18 09:37:38,644 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://chatgpt.com/', 'domain': 'chatgpt.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:37:38.374196', 'security_info': {'ip': '104.18.32.47', 'https': True, 'hsts': True, 'xss_protection': False, 'content_security': False, 'frame_options': True}, 'response_info': {'status_code': 403, 'content_type': 'text/html; charset=UTF-8', 'server': 'cloudflare', 'response_time': 0.171095, 'final_url': 'https://chatgpt.com/', 'redirected': False}, 'content_info': {'title': 'No title', 'meta_description': 'No description', 'links_count': 0, 'images_count': 0, 'scripts_count': 1}}, 'issues': []}
+2025-04-18 09:37:38,647 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://chatgpt.com/', 'domain': 'chatgpt.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:37:38.372271', 'security_info': {'ip': '104.18.32.47', 'https': True, 'hsts': True, 'xss_protection': False, 'content_security': False, 'frame_options': True}, 'response_info': {'status_code': 403, 'content_type': 'text/html; charset=UTF-8', 'server': 'cloudflare', 'response_time': 0.17261, 'final_url': 'https://chatgpt.com/', 'redirected': False}, 'content_info': {'title': 'No title', 'meta_description': 'No description', 'links_count': 0, 'images_count': 0, 'scripts_count': 1}}, 'issues': []}
+2025-04-18 09:37:38,663 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://chatgpt.com/', 'domain': 'chatgpt.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:37:38.373979', 'security_info': {'ip': '104.18.32.47', 'https': True, 'hsts': True, 'xss_protection': False, 'content_security': False, 'frame_options': True}, 'response_info': {'status_code': 403, 'content_type': 'text/html; charset=UTF-8', 'server': 'cloudflare', 'response_time': 0.192436, 'final_url': 'https://chatgpt.com/', 'redirected': False}, 'content_info': {'title': 'No title', 'meta_description': 'No description', 'links_count': 0, 'images_count': 0, 'scripts_count': 1}}, 'issues': []}
+2025-04-18 09:37:38,844 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:38] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:37:38,936 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:38] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:37:39,041 - INFO - 127.0.0.1 - - [18/Apr/2025 09:37:39] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:40:24,229 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:41:05,694 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:41:12,934 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:41:40,604 - INFO -  * Detected change in '/Users/adityayedavalli/forensic_results/main.py', reloading
+2025-04-18 09:41:40,755 - INFO -  * Restarting with stat
+2025-04-18 09:41:42,259 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:41:42,274 - WARNING -  * Debugger is active!
+2025-04-18 09:41:42,301 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:41:52,613 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:41:52,630 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5011
+2025-04-18 09:41:52,630 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:41:52,631 - INFO -  * Restarting with stat
+2025-04-18 09:41:53,264 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:41:53,269 - WARNING -  * Debugger is active!
+2025-04-18 09:41:53,281 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:42:03,367 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:03] "GET / HTTP/1.1" 200 -
+2025-04-18 09:42:04,564 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:04] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-04-18 09:42:04,565 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:04] "GET /static/css/animations.css HTTP/1.1" 200 -
+2025-04-18 09:42:04,578 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:04] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-04-18 09:42:05,932 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-18 09:42:13,766 - INFO - Starting URL analysis
+2025-04-18 09:42:13,767 - INFO - Starting URL analysis
+2025-04-18 09:42:13,775 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:42:13,779 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:42:13,781 - INFO - Starting URL analysis
+2025-04-18 09:42:13,783 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 09:42:14,343 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:42:13.782445', 'security_info': {'ip': '142.250.183.14', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.331993, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:42:14,347 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:14] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:42:14,385 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:42:13.782578', 'security_info': {'ip': '142.250.183.14', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.341912, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:42:14,387 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:14] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:42:14,468 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T09:42:13.783735', 'security_info': {'ip': '142.250.183.14', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.334256, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 09:42:14,470 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:14] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 09:42:21,491 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:42:21,503 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5011
+2025-04-18 09:42:21,503 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 09:42:21,504 - INFO -  * Restarting with stat
+2025-04-18 09:42:22,393 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 09:42:22,398 - WARNING -  * Debugger is active!
+2025-04-18 09:42:22,414 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 09:42:26,689 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:26] "GET / HTTP/1.1" 200 -
+2025-04-18 09:42:26,944 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 09:42:26,953 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:26] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 09:42:26,956 - INFO - 127.0.0.1 - - [18/Apr/2025 09:42:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 11:30:01,554 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 11:30:01,574 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5011
+2025-04-18 11:30:01,574 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-18 11:30:01,575 - INFO -  * Restarting with stat
+2025-04-18 11:30:02,139 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-04-18 11:30:02,144 - WARNING -  * Debugger is active!
+2025-04-18 11:30:02,159 - INFO -  * Debugger PIN: 546-389-575
+2025-04-18 11:30:12,616 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:12] "GET / HTTP/1.1" 200 -
+2025-04-18 11:30:13,301 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:13] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-04-18 11:30:13,301 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:13] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-04-18 11:30:13,302 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:13] "GET /static/css/animations.css HTTP/1.1" 200 -
+2025-04-18 11:30:14,402 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-18 11:30:26,413 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:26] "GET /feature/timeline HTTP/1.1" 200 -
+2025-04-18 11:30:26,480 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 11:30:26,491 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:26] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 11:30:26,492 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 11:30:30,499 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:30] "GET / HTTP/1.1" 200 -
+2025-04-18 11:30:30,529 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 11:30:30,531 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:30] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 11:30:30,532 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 11:30:48,738 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:48] "POST /analyze-file HTTP/1.1" 200 -
+2025-04-18 11:30:48,738 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:48] "POST /analyze-file HTTP/1.1" 200 -
+2025-04-18 11:30:48,740 - INFO - 127.0.0.1 - - [18/Apr/2025 11:30:48] "POST /analyze-file HTTP/1.1" 200 -
+2025-04-18 11:31:09,482 - INFO - Starting URL analysis
+2025-04-18 11:31:09,486 - INFO - Analyzing URL: https://mit659.examly.io/login
+2025-04-18 11:31:09,489 - INFO - Starting URL analysis
+2025-04-18 11:31:09,491 - INFO - Starting URL analysis
+2025-04-18 11:31:09,494 - INFO - Analyzing URL: https://mit659.examly.io/login
+2025-04-18 11:31:09,494 - INFO - Analyzing URL: https://mit659.examly.io/login
+2025-04-18 11:31:10,516 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://mit659.examly.io/login', 'domain': 'mit659.examly.io', 'scheme': 'https', 'path': '/login', 'query': '', 'timestamp': '2025-04-18T11:31:09.495029', 'security_info': {'ip': '34.233.30.196', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': False}, 'response_info': {'status_code': 200, 'content_type': 'text/html', 'server': 'nginx', 'response_time': 0.913218, 'final_url': 'https://mit659.examly.io/login', 'redirected': False}, 'content_info': {'title': 'Loading...', 'meta_description': 'No description', 'links_count': 0, 'images_count': 0, 'scripts_count': 9}}, 'issues': []}
+2025-04-18 11:31:10,519 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://mit659.examly.io/login', 'domain': 'mit659.examly.io', 'scheme': 'https', 'path': '/login', 'query': '', 'timestamp': '2025-04-18T11:31:09.495145', 'security_info': {'ip': '34.233.30.196', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': False}, 'response_info': {'status_code': 200, 'content_type': 'text/html', 'server': 'nginx', 'response_time': 0.920085, 'final_url': 'https://mit659.examly.io/login', 'redirected': False}, 'content_info': {'title': 'Loading...', 'meta_description': 'No description', 'links_count': 0, 'images_count': 0, 'scripts_count': 9}}, 'issues': []}
+2025-04-18 11:31:10,521 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:10] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 11:31:10,522 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:10] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 11:31:10,538 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://mit659.examly.io/login', 'domain': 'mit659.examly.io', 'scheme': 'https', 'path': '/login', 'query': '', 'timestamp': '2025-04-18T11:31:09.487953', 'security_info': {'ip': '34.233.30.196', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': False}, 'response_info': {'status_code': 200, 'content_type': 'text/html', 'server': 'nginx', 'response_time': 0.933781, 'final_url': 'https://mit659.examly.io/login', 'redirected': False}, 'content_info': {'title': 'Loading...', 'meta_description': 'No description', 'links_count': 0, 'images_count': 0, 'scripts_count': 9}}, 'issues': []}
+2025-04-18 11:31:10,540 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:10] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 11:31:32,763 - INFO - Starting URL analysis
+2025-04-18 11:31:32,767 - INFO - Starting URL analysis
+2025-04-18 11:31:32,770 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 11:31:32,794 - INFO - Starting URL analysis
+2025-04-18 11:31:32,796 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 11:31:32,798 - INFO - Analyzing URL: https://www.youtube.com/
+2025-04-18 11:31:33,598 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T11:31:32.799572', 'security_info': {'ip': '142.250.67.238', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.280564, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 11:31:33,624 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T11:31:32.796297', 'security_info': {'ip': '142.250.67.238', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.292709, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 11:31:33,681 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://www.youtube.com/', 'domain': 'www.youtube.com', 'scheme': 'https', 'path': '/', 'query': '', 'timestamp': '2025-04-18T11:31:32.784479', 'security_info': {'ip': '142.250.67.238', 'https': True, 'hsts': True, 'xss_protection': True, 'content_security': True, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html; charset=utf-8', 'server': 'ESF', 'response_time': 0.290016, 'final_url': 'https://www.youtube.com/', 'redirected': False}, 'content_info': {'title': 'YouTube', 'meta_description': 'Enjoy the videos and music that you love, upload original content and share it all with friends, family and the world on YouTube.', 'links_count': 14, 'images_count': 0, 'scripts_count': 41}}, 'issues': []}
+2025-04-18 11:31:33,689 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:33] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 11:31:33,699 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:33] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 11:31:33,755 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:33] "POST /analyze-url HTTP/1.1" 200 -
+2025-04-18 11:31:48,802 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:48] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-04-18 11:31:48,829 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:48] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-04-18 11:31:48,830 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:48] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-04-18 11:31:48,838 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:48] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-04-18 11:31:48,902 - INFO - 127.0.0.1 - - [18/Apr/2025 11:31:48] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-18 11:32:07,745 - INFO - 127.0.0.1 - - [18/Apr/2025 11:32:07] "GET /feature/security HTTP/1.1" 200 -
+2025-04-18 11:32:07,765 - INFO - 127.0.0.1 - - [18/Apr/2025 11:32:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 11:32:07,768 - INFO - 127.0.0.1 - - [18/Apr/2025 11:32:07] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 11:32:07,770 - INFO - 127.0.0.1 - - [18/Apr/2025 11:32:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 11:33:16,387 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:16] "[32mGET /feature/network HTTP/1.1[0m" 302 -
+2025-04-18 11:33:16,393 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:16] "GET / HTTP/1.1" 200 -
+2025-04-18 11:33:16,423 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 11:33:16,423 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 11:33:16,423 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:16] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 11:33:38,139 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:38] "GET /feature/file-signature HTTP/1.1" 200 -
+2025-04-18 11:33:38,172 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 11:33:38,172 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:38] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 11:33:38,180 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 11:33:48,051 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:48] "GET / HTTP/1.1" 200 -
+2025-04-18 11:33:48,085 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 11:33:48,095 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:48] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 11:33:48,095 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-18 11:33:58,912 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:58] "GET /feature/security HTTP/1.1" 200 -
+2025-04-18 11:33:58,929 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-04-18 11:33:58,931 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:58] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-04-18 11:33:58,932 - INFO - 127.0.0.1 - - [18/Apr/2025 11:33:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-14 14:02:37,315 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-05-14 14:02:37,333 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5011
+2025-05-14 14:02:37,333 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 14:02:37,334 - INFO -  * Restarting with stat
+2025-05-14 14:02:37,903 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-05-14 14:02:37,907 - WARNING -  * Debugger is active!
+2025-05-14 14:02:37,921 - INFO -  * Debugger PIN: 581-166-185
+2025-05-14 14:02:44,296 - INFO - 127.0.0.1 - - [14/May/2025 14:02:44] "GET / HTTP/1.1" 200 -
+2025-05-14 14:02:44,834 - INFO - 127.0.0.1 - - [14/May/2025 14:02:44] "GET /static/css/animations.css HTTP/1.1" 200 -
+2025-05-14 14:02:44,834 - INFO - 127.0.0.1 - - [14/May/2025 14:02:44] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-05-14 14:02:44,835 - INFO - 127.0.0.1 - - [14/May/2025 14:02:44] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-05-14 14:02:46,511 - INFO - 127.0.0.1 - - [14/May/2025 14:02:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-14 14:06:08,431 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-05-14 14:06:08,465 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5011
+2025-05-14 14:06:08,466 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 14:06:08,467 - INFO -  * Restarting with stat
+2025-05-14 14:06:09,431 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-05-14 14:06:09,436 - WARNING -  * Debugger is active!
+2025-05-14 14:06:09,451 - INFO -  * Debugger PIN: 581-166-185
+2025-05-14 14:06:20,696 - INFO - 127.0.0.1 - - [14/May/2025 14:06:20] "GET / HTTP/1.1" 200 -
+2025-05-14 14:06:20,829 - INFO - 127.0.0.1 - - [14/May/2025 14:06:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-14 14:06:20,829 - INFO - 127.0.0.1 - - [14/May/2025 14:06:20] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-05-14 14:06:20,830 - INFO - 127.0.0.1 - - [14/May/2025 14:06:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-14 14:06:32,978 - INFO - Starting URL analysis
+2025-05-14 14:06:32,979 - INFO - Starting URL analysis
+2025-05-14 14:06:32,982 - INFO - Analyzing URL: https://ibmglobal.avature.net/en_US/careers
+2025-05-14 14:06:32,983 - INFO - Analyzing URL: https://ibmglobal.avature.net/en_US/careers
+2025-05-14 14:06:32,984 - INFO - Starting URL analysis
+2025-05-14 14:06:32,986 - INFO - Analyzing URL: https://ibmglobal.avature.net/en_US/careers
+2025-05-14 14:06:36,311 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://ibmglobal.avature.net/en_US/careers', 'domain': 'ibmglobal.avature.net', 'scheme': 'https', 'path': '/en_US/careers', 'query': '', 'timestamp': '2025-05-14T14:06:32.984882', 'security_info': {'ip': '74.217.56.160', 'https': True, 'hsts': True, 'xss_protection': False, 'content_security': False, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html;charset=UTF-8', 'server': 'Unknown', 'response_time': 2.951053, 'final_url': 'https://ibmglobal.avature.net/en_US/careers', 'redirected': False}, 'content_info': {'title': 'Job Search | IBM', 'meta_description': 'No description', 'links_count': 97, 'images_count': 19, 'scripts_count': 28}}, 'issues': []}
+2025-05-14 14:06:36,319 - INFO - 127.0.0.1 - - [14/May/2025 14:06:36] "POST /analyze-url HTTP/1.1" 200 -
+2025-05-14 14:06:37,110 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://ibmglobal.avature.net/en_US/careers', 'domain': 'ibmglobal.avature.net', 'scheme': 'https', 'path': '/en_US/careers', 'query': '', 'timestamp': '2025-05-14T14:06:32.984722', 'security_info': {'ip': '74.217.56.160', 'https': True, 'hsts': True, 'xss_protection': False, 'content_security': False, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html;charset=UTF-8', 'server': 'Unknown', 'response_time': 3.747859, 'final_url': 'https://ibmglobal.avature.net/en_US/careers', 'redirected': False}, 'content_info': {'title': 'Job Search | IBM', 'meta_description': 'No description', 'links_count': 97, 'images_count': 19, 'scripts_count': 28}}, 'issues': []}
+2025-05-14 14:06:37,111 - INFO - 127.0.0.1 - - [14/May/2025 14:06:37] "POST /analyze-url HTTP/1.1" 200 -
+2025-05-14 14:06:37,242 - INFO - Analysis results: {'success': True, 'data': {'url': 'https://ibmglobal.avature.net/en_US/careers', 'domain': 'ibmglobal.avature.net', 'scheme': 'https', 'path': '/en_US/careers', 'query': '', 'timestamp': '2025-05-14T14:06:32.986518', 'security_info': {'ip': '74.217.56.160', 'https': True, 'hsts': True, 'xss_protection': False, 'content_security': False, 'frame_options': True}, 'response_info': {'status_code': 200, 'content_type': 'text/html;charset=UTF-8', 'server': 'Unknown', 'response_time': 3.89351, 'final_url': 'https://ibmglobal.avature.net/en_US/careers', 'redirected': False}, 'content_info': {'title': 'Job Search | IBM', 'meta_description': 'No description', 'links_count': 97, 'images_count': 19, 'scripts_count': 28}}, 'issues': []}
+2025-05-14 14:06:37,244 - INFO - 127.0.0.1 - - [14/May/2025 14:06:37] "POST /analyze-url HTTP/1.1" 200 -
+2025-05-14 14:07:09,326 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-05-14 14:07:09,351 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5011
+2025-05-14 14:07:09,351 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 14:07:09,353 - INFO -  * Restarting with stat
+2025-05-14 14:07:10,334 - INFO - Digital Forensics Tool v1.0.0 initialized
+2025-05-14 14:07:10,343 - WARNING -  * Debugger is active!
+2025-05-14 14:07:10,369 - INFO -  * Debugger PIN: 581-166-185
+2025-05-14 14:07:16,935 - INFO - 127.0.0.1 - - [14/May/2025 14:07:16] "GET / HTTP/1.1" 200 -
+2025-05-14 14:07:17,072 - INFO - 127.0.0.1 - - [14/May/2025 14:07:17] "[36mGET /static/css/animations.css HTTP/1.1[0m" 304 -
+2025-05-14 14:07:17,073 - INFO - 127.0.0.1 - - [14/May/2025 14:07:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-14 14:07:17,076 - INFO - 127.0.0.1 - - [14/May/2025 14:07:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
