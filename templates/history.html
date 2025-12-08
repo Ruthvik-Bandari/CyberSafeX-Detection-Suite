@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block title %}Analysis History - CyberSafeX Detection Suite{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-history me-2 text-primary"></i>Analysis History</h2>
+    <a href="/" class="btn btn-primary">
+        <i class="fas fa-plus me-2"></i>New Analysis
+    </a>
+</div>
+
+{% if analyses %}
+<div class="card">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Target</th>
+                        <th>Result Summary</th>
+                        <th>Timestamp</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for analysis in analyses %}
+                    <tr>
+                        <td><code>#{{ analysis.id }}</code></td>
+                        <td>
+                            <span class="badge bg-{{ 'primary' if analysis.type == 'file' else 'success' }}">
+                                <i class="fas fa-{{ 'file' if analysis.type == 'file' else 'globe' }} me-1"></i>
+                                {{ analysis.type|capitalize }}
+                            </span>
+                        </td>
+                        <td class="text-truncate" style="max-width: 200px;" title="{{ analysis.target }}">
+                            {{ analysis.target }}
+                        </td>
+                        <td>
+                            {% if analysis.result %}
+                                {% if analysis.result.security %}
+                                    {% set risk = analysis.result.security.risk_level or 'unknown' %}
+                                    <span class="status-badge status-{{ 'clean' if risk == 'low' else ('warning' if risk == 'medium' else 'suspicious') }}">
+                                        {{ risk|upper }}
+                                    </span>
+                                {% elif analysis.result.security_info %}
+                                    {% set https = analysis.result.security_info.https %}
+                                    <span class="status-badge status-{{ 'clean' if https else 'warning' }}">
+                                        {{ 'HTTPS' if https else 'HTTP' }}
+                                    </span>
+                                {% else %}
+                                    <span class="text-muted">Completed</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="text-muted">N/A</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-muted small">{{ analysis.timestamp }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" onclick="viewDetails({{ analysis.id }}, {{ analysis.result | tojson | e }})">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Pagination -->
+{% if total_pages > 1 %}
+<nav class="mt-4">
+    <ul class="pagination justify-content-center">
+        <li class="page-item {{ 'disabled' if page == 1 else '' }}">
+            <a class="page-link" href="?page={{ page - 1 }}">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+        </li>
+        {% for p in range(1, total_pages + 1) %}
+            {% if p == page %}
+                <li class="page-item active"><span class="page-link">{{ p }}</span></li>
+            {% elif p == 1 or p == total_pages or (p >= page - 2 and p <= page + 2) %}
+                <li class="page-item"><a class="page-link" href="?page={{ p }}">{{ p }}</a></li>
+            {% elif p == page - 3 or p == page + 3 %}
+                <li class="page-item disabled"><span class="page-link">...</span></li>
+            {% endif %}
+        {% endfor %}
+        <li class="page-item {{ 'disabled' if page == total_pages else '' }}">
+            <a class="page-link" href="?page={{ page + 1 }}">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endif %}
+
+{% else %}
+<div class="card">
+    <div class="card-body text-center py-5">
+        <i class="fas fa-inbox fa-4x text-muted mb-4"></i>
+        <h4 class="text-muted">No Analysis History</h4>
+        <p class="text-muted mb-4">You haven't performed any analyses yet. Start by analyzing a file or URL.</p>
+        <a href="/" class="btn btn-primary">
+            <i class="fas fa-search me-2"></i>Start Analyzing
+        </a>
+    </div>
+</div>
+{% endif %}
+
+<!-- Details Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background: var(--bg-card); color: var(--text-light);">
+            <div class="modal-header border-bottom border-secondary">
+                <h5 class="modal-title"><i class="fas fa-info-circle me-2"></i>Analysis Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <pre id="detailsContent" class="bg-dark p-3 rounded" style="max-height: 500px; overflow: auto;"></pre>
+            </div>
+            <div class="modal-footer border-top border-secondary">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .page-link {
+        background: var(--bg-card);
+        border-color: rgba(99, 102, 241, 0.3);
+        color: var(--text-light);
+    }
+    
+    .page-link:hover {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+    }
+    
+    .page-item.active .page-link {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+    
+    .page-item.disabled .page-link {
+        background: transparent;
+        border-color: rgba(99, 102, 241, 0.2);
+        color: var(--text-muted);
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function viewDetails(id, result) {
+        const content = document.getElementById('detailsContent');
+        content.textContent = JSON.stringify(result, null, 2);
+        const modal = new bootstrap.Modal(document.getElementById('detailsModal'));
+        modal.show();
+    }
+</script>
+{% endblock %}

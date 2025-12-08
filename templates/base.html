@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CyberSafeX Detection Suite{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #1e293b;
+            --accent-color: #22c55e;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-light: #ffffff;
+            --text-muted: #cbd5e1;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a2e 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Ensure all text is white */
+        p, span, div, li, td, th, label, h1, h2, h3, h4, h5, h6 {
+            color: var(--text-light);
+        }
+
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+        
+        .navbar {
+            background: rgba(30, 41, 59, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link {
+            color: var(--text-light) !important;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+        
+        .card-header {
+            background: transparent;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+            color: var(--text-light);
+        }
+
+        .card-body {
+            color: var(--text-light);
+        }
+
+        .card-title, .card-text {
+            color: var(--text-light);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+            border: none;
+            border-radius: 8px;
+            padding: 10px 24px;
+            font-weight: 600;
+            transition: all 0.3s;
+            color: #ffffff;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+            color: #ffffff;
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: #ffffff;
+        }
+        
+        .form-control, .form-select {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #ffffff !important;
+            border-radius: 8px;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            background: rgba(15, 23, 42, 0.9);
+            border-color: var(--primary-color);
+            color: #ffffff !important;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        .form-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .form-text {
+            color: var(--text-muted);
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .results-container {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status-clean {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--accent-color);
+        }
+        
+        .status-suspicious {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger-color);
+        }
+        
+        .status-warning {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning-color);
+        }
+        
+        .table {
+            color: var(--text-light);
+        }
+        
+        .table thead th {
+            border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        
+        .table td, .table th {
+            border-color: rgba(99, 102, 241, 0.1);
+            color: var(--text-light);
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(99, 102, 241, 0.1);
+            color: var(--text-light);
+        }
+        
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .loading-spinner.active {
+            display: block;
+        }
+        
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: var(--primary-color);
+        }
+
+        .hero-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: var(--text-muted);
+        }
+
+        /* Alert styles */
+        .alert {
+            color: var(--text-light);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: transparent;
+        }
+
+        .breadcrumb-item a {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb-item.active {
+            color: var(--text-muted);
+        }
+
+        /* List styles */
+        .list-unstyled li {
+            color: var(--text-light);
+        }
+
+        /* Links */
+        a {
+            color: var(--primary-color);
+        }
+
+        a:hover {
+            color: #8b5cf6;
+        }
+
+        /* Code blocks */
+        code {
+            color: #f472b6;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            color: var(--text-light);
+        }
+
+        /* Modal */
+        .modal-content {
+            background: var(--bg-card);
+            color: var(--text-light);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .btn-close-white {
+            filter: invert(1);
+        }
+
+        /* Small text */
+        small, .small {
+            color: var(--text-muted);
+        }
+
+        /* Badge colors */
+        .badge {
+            color: #ffffff;
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+
+        .text-success {
+            color: var(--accent-color) !important;
+        }
+
+        .text-danger {
+            color: var(--danger-color) !important;
+        }
+
+        .text-warning {
+            color: var(--warning-color) !important;
+        }
+
+        /* Input text */
+        input, textarea, select {
+            color: #ffffff !important;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+            background: var(--bg-card);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .dropdown-item {
+            color: var(--text-light);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--text-light);
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt me-2"></i>CyberSafeX
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard"><i class="fas fa-chart-line me-1"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/history"><i class="fas fa-history me-1"></i> History</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p class="text-muted mb-0">
+                <i class="fas fa-shield-alt me-1"></i> CyberSafeX Detection Suite &copy; 2024 | Digital Forensics & Security Analysis
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

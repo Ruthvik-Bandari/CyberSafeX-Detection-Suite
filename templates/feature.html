@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}{{ feature.title }} - CyberSafeX Detection Suite{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/" class="text-primary">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ feature.title }}</li>
+    </ol>
+</nav>
+
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body p-4">
+                <div class="feature-icon mb-4">
+                    <i class="fas fa-{{ feature.icon }}"></i>
+                </div>
+                <h2 class="mb-3">{{ feature.title }}</h2>
+                <p class="lead text-muted mb-4">{{ feature.description }}</p>
+                
+                <h5 class="mb-3"><i class="fas fa-list-check me-2 text-primary"></i>Capabilities</h5>
+                <ul class="list-unstyled">
+                    {% for capability in feature.capabilities %}
+                    <li class="mb-2">
+                        <i class="fas fa-check-circle text-success me-2"></i>{{ capability }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                <hr class="my-4">
+                
+                <h5 class="mb-3"><i class="fas fa-book me-2 text-primary"></i>How It Works</h5>
+                
+                {% if feature_id == 'file-signature' %}
+                <p>File signature analysis works by examining the first few bytes (magic numbers) of a file to determine its true type, regardless of the file extension. This helps identify:</p>
+                <ul>
+                    <li>Files with altered extensions to bypass security measures</li>
+                    <li>Embedded files within other file types</li>
+                    <li>Corrupted or malformed file headers</li>
+                    <li>Potential steganography or data hiding</li>
+                </ul>
+                
+                {% elif feature_id == 'security' %}
+                <p>Our security analysis uses multiple heuristics to detect potential threats:</p>
+                <ul>
+                    <li><strong>Signature Matching:</strong> Compares file content against known malware signatures</li>
+                    <li><strong>Entropy Analysis:</strong> High entropy can indicate encryption or packing</li>
+                    <li><strong>Pattern Detection:</strong> Identifies suspicious code patterns and shellcode</li>
+                    <li><strong>API Analysis:</strong> Detects usage of potentially dangerous system calls</li>
+                </ul>
+                
+                {% elif feature_id == 'metadata' %}
+                <p>Metadata extraction reveals hidden information embedded in files:</p>
+                <ul>
+                    <li><strong>EXIF Data:</strong> Camera settings, GPS coordinates, timestamps for images</li>
+                    <li><strong>Document Properties:</strong> Author, creation date, revision history</li>
+                    <li><strong>System Information:</strong> Software used, operating system details</li>
+                    <li><strong>Hidden Fields:</strong> Comments, annotations, tracking data</li>
+                </ul>
+                
+                {% elif feature_id == 'timeline' %}
+                <p>Timeline analysis helps reconstruct events by analyzing temporal data:</p>
+                <ul>
+                    <li><strong>File System Events:</strong> Creation, modification, access timestamps</li>
+                    <li><strong>Activity Patterns:</strong> Identifying unusual access patterns</li>
+                    <li><strong>Event Correlation:</strong> Linking related activities across files</li>
+                    <li><strong>Anomaly Detection:</strong> Spotting timestamps that don't fit patterns</li>
+                </ul>
+                
+                {% elif feature_id == 'memory' %}
+                <p>Memory forensics analyzes RAM dumps to uncover volatile data:</p>
+                <ul>
+                    <li><strong>Process Analysis:</strong> Running processes and their memory</li>
+                    <li><strong>String Extraction:</strong> Readable text, passwords, URLs</li>
+                    <li><strong>Network Connections:</strong> Active connections in memory</li>
+                    <li><strong>Artifact Recovery:</strong> Deleted files, chat logs, credentials</li>
+                </ul>
+                {% endif %}
+                
+                <div class="mt-4">
+                    <a href="/" class="btn btn-primary">
+                        <i class="fas fa-search me-2"></i>Start Analysis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-lightbulb me-2"></i>Tips</h5>
+            </div>
+            <div class="card-body">
+                {% if feature_id == 'file-signature' %}
+                <p class="small text-muted">Always compare the detected file type with the extension. Mismatches could indicate tampering.</p>
+                {% elif feature_id == 'security' %}
+                <p class="small text-muted">Suspicious files should be analyzed in an isolated environment. Never execute unknown files.</p>
+                {% elif feature_id == 'metadata' %}
+                <p class="small text-muted">Remove sensitive metadata before sharing files publicly to protect privacy.</p>
+                {% elif feature_id == 'timeline' %}
+                <p class="small text-muted">Look for timestamp anomalies like future dates or clustered activities.</p>
+                {% elif feature_id == 'memory' %}
+                <p class="small text-muted">Memory analysis is most effective immediately after an incident occurs.</p>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-tools me-2"></i>Related Features</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mb-0">
+                    {% if feature_id != 'file-signature' %}
+                    <li class="mb-2"><a href="/feature/file-signature" class="text-primary"><i class="fas fa-fingerprint me-2"></i>File Signatures</a></li>
+                    {% endif %}
+                    {% if feature_id != 'security' %}
+                    <li class="mb-2"><a href="/feature/security" class="text-primary"><i class="fas fa-shield-alt me-2"></i>Security Analysis</a></li>
+                    {% endif %}
+                    {% if feature_id != 'metadata' %}
+                    <li class="mb-2"><a href="/feature/metadata" class="text-primary"><i class="fas fa-info-circle me-2"></i>Metadata</a></li>
+                    {% endif %}
+                    {% if feature_id != 'timeline' %}
+                    <li class="mb-2"><a href="/feature/timeline" class="text-primary"><i class="fas fa-clock me-2"></i>Timeline</a></li>
+                    {% endif %}
+                    {% if feature_id != 'memory' %}
+                    <li class="mb-2"><a href="/feature/memory" class="text-primary"><i class="fas fa-memory me-2"></i>Memory Forensics</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

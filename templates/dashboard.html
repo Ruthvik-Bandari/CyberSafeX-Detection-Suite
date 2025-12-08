@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - CyberSafeX Detection Suite{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-chart-line me-2 text-primary"></i>Analytics Dashboard</h2>
+    <a href="/" class="btn btn-primary">
+        <i class="fas fa-plus me-2"></i>New Analysis
+    </a>
+</div>
+
+<!-- Stats Cards -->
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="card text-center p-4">
+            <div class="feature-icon mx-auto" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+                <i class="fas fa-file-alt"></i>
+            </div>
+            <h3 class="mb-1">{{ analysis_counts.get('file', 0) }}</h3>
+            <p class="text-muted mb-0">File Analyses</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-4">
+            <div class="feature-icon mx-auto" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+                <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="mb-1">{{ analysis_counts.get('url', 0) }}</h3>
+            <p class="text-muted mb-0">URL Analyses</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-4">
+            <div class="feature-icon mx-auto" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="mb-1">{{ analysis_counts.get('security', 0) }}</h3>
+            <p class="text-muted mb-0">Security Scans</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center p-4">
+            <div class="feature-icon mx-auto" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3 class="mb-1">{{ analysis_counts.get('threats', 0) }}</h3>
+            <p class="text-muted mb-0">Threats Detected</p>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="row g-4 mb-4">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-chart-pie me-2"></i>Analysis Distribution</h5>
+            </div>
+            <div class="card-body">
+                {% if visualizations and visualizations.type_distribution %}
+                <div id="typeDistribution"></div>
+                {% else %}
+                <div class="text-center py-5 text-muted">
+                    <i class="fas fa-chart-pie fa-3x mb-3"></i>
+                    <p>No analysis data available yet.<br>Start analyzing files or URLs to see statistics.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-clock me-2"></i>Recent Activity</h5>
+            </div>
+            <div class="card-body">
+                {% if recent_analyses %}
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Target</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for analysis in recent_analyses %}
+                            <tr>
+                                <td>
+                                    <span class="badge bg-{{ 'primary' if analysis.type == 'file' else 'success' }}">
+                                        <i class="fas fa-{{ 'file' if analysis.type == 'file' else 'globe' }} me-1"></i>
+                                        {{ analysis.type|capitalize }}
+                                    </span>
+                                </td>
+                                <td class="text-truncate" style="max-width: 200px;">{{ analysis.target }}</td>
+                                <td class="text-muted small">{{ analysis.timestamp }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="text-center py-5 text-muted">
+                    <i class="fas fa-history fa-3x mb-3"></i>
+                    <p>No recent analyses.<br>Start by analyzing a file or URL.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0"><i class="fas fa-bolt me-2"></i>Quick Actions</h5>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <a href="/" class="btn btn-outline-primary w-100 py-3">
+                    <i class="fas fa-file-upload fa-2x mb-2 d-block"></i>
+                    Analyze File
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/" class="btn btn-outline-success w-100 py-3">
+                    <i class="fas fa-link fa-2x mb-2 d-block"></i>
+                    Analyze URL
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/history" class="btn btn-outline-secondary w-100 py-3">
+                    <i class="fas fa-history fa-2x mb-2 d-block"></i>
+                    View History
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+{% if visualizations and visualizations.type_distribution %}
+    const typeData = {{ visualizations.type_distribution | tojson }};
+    typeData.layout.paper_bgcolor = 'rgba(0,0,0,0)';
+    typeData.layout.plot_bgcolor = 'rgba(0,0,0,0)';
+    typeData.layout.font = {color: '#e2e8f0'};
+    Plotly.newPlot('typeDistribution', typeData.data, typeData.layout);
+{% endif %}
+</script>
+{% endblock %}

@@ -1515,55 +1515,54 @@ if __name__ == "__main__":
         # Ask the user for the output directory
         output_dir = input("Enter the path to save the output files: ").strip()
         os.makedirs(output_dir, exist_ok=True)
-    os.makedirs(output_dir, exist_ok=True)
 
-    # Add evidence to the case
-    evidence_id = tool.add_evidence(case_id, evidence_path, "disk_image", "User-provided evidence")
-    print(f"Added evidence with ID: {evidence_id}")
+        # Add evidence to the case
+        evidence_id = tool.add_evidence(case_id, evidence_path, "disk_image", "User-provided evidence")
+        print(f"Added evidence with ID: {evidence_id}")
 
-    # Process the evidence
-    print("Processing evidence...")
-    result = tool.process_evidence(case_id, evidence_id)
-    print(f"Evidence processing completed. Results saved in: {result['output_directory']}")
+        # Process the evidence
+        print("Processing evidence...")
+        result = tool.process_evidence(case_id, evidence_id)
+        print(f"Evidence processing completed. Results saved in: {result['output_directory']}")
 
-    # Create a timeline
-    print("Creating timeline...")
-    timeline_result = tool.create_timeline(case_id, evidence_id)
-    if "error" in timeline_result:
-        print(f"Error creating timeline: {timeline_result['error']}")
-    else:
-        print(f"Timeline saved to: {timeline_result['timeline']}")
-        print(f"Anomalies saved to: {timeline_result['anomalies']}")
-
-    # Display malware scan results
-    print("\nMalware Scan Results:")
-
-results_db = os.path.join(output_dir, f"{evidence_id}_results.sqlite")
-
-if os.path.exists(results_db):
-    conn = sqlite3.connect(results_db)
-    cursor = conn.cursor()
-
-    try:
-        # Check if 'files' table exists
-        cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='files'")
-        if cursor.fetchone():
-            cursor.execute("SELECT file_path, malware_scan FROM files")
-            for row in cursor.fetchall():
-                file_path, malware_scan = row
-                malware_scan = json.loads(malware_scan)
-                print(f"\nFile: {file_path}")
-                if malware_scan.get("infected") is True:
-                    print("Status: Infected")
-                    for malware in malware_scan["details"]:
-                        print(f"  - Type: {malware['type']}, Name: {malware['name']}, Signature: {malware['signature']}")
-                else:
-                    print("Status: Clean")
+        # Create a timeline
+        print("Creating timeline...")
+        timeline_result = tool.create_timeline(case_id, evidence_id)
+        if "error" in timeline_result:
+            print(f"Error creating timeline: {timeline_result['error']}")
         else:
-            print("⚠️ No 'files' table found. Evidence might not have been processed properly.")
-    except Exception as e:
-        print(f"❌ Error reading malware scan results: {e}")
-    finally:
-        conn.close()
-else:
-    print("❌ Results database not found. Maybe processing failed.")
+            print(f"Timeline saved to: {timeline_result['timeline']}")
+            print(f"Anomalies saved to: {timeline_result['anomalies']}")
+
+        # Display malware scan results
+        print("\nMalware Scan Results:")
+
+        results_db = os.path.join(output_dir, f"{evidence_id}_results.sqlite")
+
+        if os.path.exists(results_db):
+            conn = sqlite3.connect(results_db)
+            cursor = conn.cursor()
+
+            try:
+                # Check if 'files' table exists
+                cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='files'")
+                if cursor.fetchone():
+                    cursor.execute("SELECT file_path, malware_scan FROM files")
+                    for row in cursor.fetchall():
+                        file_path, malware_scan = row
+                        malware_scan = json.loads(malware_scan)
+                        print(f"\nFile: {file_path}")
+                        if malware_scan.get("infected") is True:
+                            print("Status: Infected")
+                            for malware in malware_scan["details"]:
+                                print(f"  - Type: {malware['type']}, Name: {malware['name']}, Signature: {malware['signature']}")
+                        else:
+                            print("Status: Clean")
+                else:
+                    print("⚠️ No 'files' table found. Evidence might not have been processed properly.")
+            except Exception as e:
+                print(f"❌ Error reading malware scan results: {e}")
+            finally:
+                conn.close()
+        else:
+            print("❌ Results database not found. Maybe processing failed.")

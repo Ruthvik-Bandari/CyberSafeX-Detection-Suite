@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for, send_from_directory, jsonify
 import os
 import sys
+import uuid
 import sqlite3
 from werkzeug.utils import secure_filename
 from datetime import datetime
@@ -427,78 +428,6 @@ def analyze_url():
         return jsonify({
             'success': False,
             'error': 'Internal server error'
-        }), 500
-        
-        # Add visualizations
-        visualizations = {}
-        
-        # Security Score Gauge
-        if 'security_score' in results:
-            gauge = go.Figure(go.Indicator(
-                mode="gauge+number",
-                value=results['security_score'],
-                domain={'x': [0, 1], 'y': [0, 1]},
-                title={'text': "Security Score"},
-                gauge={
-                    'axis': {'range': [0, 100]},
-                    'bar': {'color': "#6366f1"},
-                    'steps': [
-                        {'range': [0, 40], 'color': "#ef4444"},
-                        {'range': [40, 70], 'color': "#f59e0b"},
-                        {'range': [70, 100], 'color': "#22c55e"}
-                    ]
-                }
-            ))
-            gauge.update_layout(
-                font={'color': "#1e293b"},
-                paper_bgcolor="rgba(0,0,0,0)",
-                height=300
-            )
-            visualizations['security_gauge'] = json.dumps(gauge, cls=plotly.utils.PlotlyJSONEncoder)
-        
-        # Headers Analysis
-        if 'headers_analysis' in results and 'missing_headers' in results['headers_analysis']:
-            missing = len(results['headers_analysis']['missing_headers'])
-            present = 4 - missing  # Total important headers we check
-            
-            pie = go.Figure(data=[go.Pie(
-                labels=['Present', 'Missing'],
-                values=[present, missing],
-                hole=.3,
-                marker={'colors': ['#22c55e', '#ef4444']}
-            )])
-            pie.update_layout(
-                title='Security Headers',
-                font={'color': "#1e293b"},
-                paper_bgcolor="rgba(0,0,0,0)",
-                height=300
-            )
-            visualizations['headers_analysis'] = json.dumps(pie, cls=plotly.utils.PlotlyJSONEncoder)
-        
-        results['visualizations'] = visualizations
-        
-        # Generate report ID
-        report_id = hashlib.md5(url.encode()).hexdigest()
-        results['report_id'] = report_id
-        
-        return jsonify({
-            'success': True,
-            'data': results
-        })
-    
-    except requests.exceptions.RequestException as e:
-        return jsonify({
-            'success': False,
-            'error': f'Failed to connect to the URL: {str(e)}'
-        }), 500
-    except Exception as e:
-        app.logger.error(f'Error in analyze_url: {str(e)}')
-        app.logger.error(traceback.format_exc())
-        return jsonify({
-            'success': False,
-            'error': f'Error analyzing URL: {str(e)}',
-            'data': {},
-            'issues': [f'Server error: {str(e)}']
         }), 500
 
 @app.route("/report")
