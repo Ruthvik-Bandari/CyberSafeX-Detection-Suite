@@ -12,6 +12,7 @@ import plotly.graph_objects as go
 import hashlib
 import requests
 import traceback
+from pathlib import Path
 
 # Ensure current directory is in sys.path so local modules can be imported
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -29,6 +30,27 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
 # Initialize the forensics tool
 tool = ForensicTool()
+
+
+def _to_json_safe(value):
+    """Convert common non-JSON-native values into JSON-safe values."""
+    if isinstance(value, dict):
+        return {k: _to_json_safe(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_to_json_safe(v) for v in value]
+    if isinstance(value, tuple):
+        return [_to_json_safe(v) for v in value]
+    if isinstance(value, datetime):
+        return value.isoformat()
+
+    # Support numpy and other scalar types exposing .item()
+    if hasattr(value, 'item'):
+        try:
+            return value.item()
+        except Exception:
+            pass
+
+    return value
 
 # Database initialization
 def init_db():
@@ -200,7 +222,7 @@ def history():
                          total_pages=total_pages)
 # End of features dictionary
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == "POST":
         case_name = request.form.get("case_name")
@@ -225,7 +247,6 @@ def index():
         # Add and process evidence
         evidence_id = tool.add_evidence(case_id, file_path)
         result = tool.process_evidence(case_id, evidence_id)
-        tool.create_timeline(case_id, evidence_id)
 
         # Report path
         report_path = os.path.join(result['output_directory'], f"{evidence_id}_report.html")
@@ -251,25 +272,16 @@ def analyze_file():
         
         # Save and analyze file
         filename = secure_filename(file.filename)
-        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        unique_filename = f"{uuid.uuid4().hex}_{filename}"
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], unique_filename)
         file.save(filepath)
         
         try:
-            # Get file info
-            file_size = os.path.getsize(filepath)
-            file_type = os.path.splitext(filename)[1]
-            
-            # Basic file analysis results
-            results = {
-                'filename': filename,
-                'file_size': file_size,
-                'file_type': file_type,
-                'upload_time': datetime.now().isoformat(),
-                'analysis': {
-                    'mime_type': file.content_type,
-                    'hash': hashlib.md5(open(filepath, 'rb').read()).hexdigest()
-                }
-            }
+            # Use the core forensic analyzer to keep API and UI data aligned.
+            results = tool.analyze_file(filepath)
+            results = _to_json_safe(results)
+            results['upload_time'] = datetime.now().isoformat()
+            results['original_filename'] = filename
             
             # Save to history
             with sqlite3.connect('forensics.db') as conn:
@@ -286,9 +298,10 @@ def analyze_file():
             # Byte frequency visualization
             if 'byte_frequency' in results.get('content_analysis', {}):
                 freq_data = results['content_analysis']['byte_frequency']
+                y_values = [freq_data.get(i, 0) for i in range(256)]
                 fig = go.Figure(data=[go.Bar(
                     x=list(range(256)),
-                    y=freq_data,
+                    y=y_values,
                     marker_color='#6366f1'
                 )])
                 fig.update_layout(
@@ -414,7 +427,10 @@ def analyze_url():
             }],
             'layout': {
                 'height': 300,
-                'margin': {'t': 25, 'b': 0, 'l': 25, 'r': 25}
+                'margin': {'t': 25, 'b': 0, 'l': 25, 'r': 25},
+                'paper_bgcolor': 'rgba(0,0,0,0)',
+                'plot_bgcolor': 'rgba(0,0,0,0)',
+                'font': {'color': '#e2e8f0'}
             }
         }
         
@@ -435,7 +451,14 @@ def report():
     path = request.args.get('path')
     if not path or not os.path.exists(path):
         raise NotFound("Report not found.")
-    folder, file_name = os.path.split(path)
+
+    # Restrict report serving to files under workspace to avoid arbitrary file reads
+    resolved_path = Path(path).resolve()
+    workspace_root = Path(__file__).resolve().parent
+    if workspace_root not in resolved_path.parents:
+        raise NotFound("Report not found.")
+
+    folder, file_name = os.path.split(str(resolved_path))
     return send_from_directory(folder, file_name)
 
 if __name__ == "__main__":

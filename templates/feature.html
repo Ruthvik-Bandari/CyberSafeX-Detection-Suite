@@ -21,13 +21,11 @@
                 <p class="lead text-muted mb-4">{{ feature.description }}</p>
                 
                 <h5 class="mb-3"><i class="fas fa-list-check me-2 text-primary"></i>Capabilities</h5>
-                <ul class="list-unstyled">
-                    {% for capability in feature.capabilities %}
-                    <li class="mb-2">
+                <div class="list-unstyled">{% for capability in feature.capabilities %}
+                    <div class="mb-2">
                         <i class="fas fa-check-circle text-success me-2"></i>{{ capability }}
-                    </li>
-                    {% endfor %}
-                </ul>
+                    </div>
+                    {% endfor %}</div>
                 
                 <hr class="my-4">
                 
@@ -113,23 +111,13 @@
                 <h5 class="mb-0"><i class="fas fa-tools me-2"></i>Related Features</h5>
             </div>
             <div class="card-body">
-                <ul class="list-unstyled mb-0">
-                    {% if feature_id != 'file-signature' %}
-                    <li class="mb-2"><a href="/feature/file-signature" class="text-primary"><i class="fas fa-fingerprint me-2"></i>File Signatures</a></li>
-                    {% endif %}
-                    {% if feature_id != 'security' %}
-                    <li class="mb-2"><a href="/feature/security" class="text-primary"><i class="fas fa-shield-alt me-2"></i>Security Analysis</a></li>
-                    {% endif %}
-                    {% if feature_id != 'metadata' %}
-                    <li class="mb-2"><a href="/feature/metadata" class="text-primary"><i class="fas fa-info-circle me-2"></i>Metadata</a></li>
-                    {% endif %}
-                    {% if feature_id != 'timeline' %}
-                    <li class="mb-2"><a href="/feature/timeline" class="text-primary"><i class="fas fa-clock me-2"></i>Timeline</a></li>
-                    {% endif %}
-                    {% if feature_id != 'memory' %}
-                    <li class="mb-2"><a href="/feature/memory" class="text-primary"><i class="fas fa-memory me-2"></i>Memory Forensics</a></li>
-                    {% endif %}
-                </ul>
+                <div class="list-unstyled mb-0">
+                    <div class="mb-2{% if feature_id == 'file-signature' %} d-none{% endif %}"><a href="/feature/file-signature" class="text-primary"><i class="fas fa-fingerprint me-2"></i>File Signatures</a></div>
+                    <div class="mb-2{% if feature_id == 'security' %} d-none{% endif %}"><a href="/feature/security" class="text-primary"><i class="fas fa-shield-alt me-2"></i>Security Analysis</a></div>
+                    <div class="mb-2{% if feature_id == 'metadata' %} d-none{% endif %}"><a href="/feature/metadata" class="text-primary"><i class="fas fa-info-circle me-2"></i>Metadata</a></div>
+                    <div class="mb-2{% if feature_id == 'timeline' %} d-none{% endif %}"><a href="/feature/timeline" class="text-primary"><i class="fas fa-clock me-2"></i>Timeline</a></div>
+                    <div class="mb-2{% if feature_id == 'memory' %} d-none{% endif %}"><a href="/feature/memory" class="text-primary"><i class="fas fa-memory me-2"></i>Memory Forensics</a></div>
+                </div>
             </div>
         </div>
     </div>

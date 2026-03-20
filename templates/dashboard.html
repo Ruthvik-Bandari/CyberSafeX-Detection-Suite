@@ -14,7 +14,7 @@
 <div class="row g-4 mb-4">
     <div class="col-md-3">
         <div class="card text-center p-4">
-            <div class="feature-icon mx-auto" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+            <div class="feature-icon mx-auto feature-icon-file">
                 <i class="fas fa-file-alt"></i>
             </div>
             <h3 class="mb-1">{{ analysis_counts.get('file', 0) }}</h3>
@@ -23,7 +23,7 @@
     </div>
     <div class="col-md-3">
         <div class="card text-center p-4">
-            <div class="feature-icon mx-auto" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+            <div class="feature-icon mx-auto feature-icon-url">
                 <i class="fas fa-globe"></i>
             </div>
             <h3 class="mb-1">{{ analysis_counts.get('url', 0) }}</h3>
@@ -32,7 +32,7 @@
     </div>
     <div class="col-md-3">
         <div class="card text-center p-4">
-            <div class="feature-icon mx-auto" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <div class="feature-icon mx-auto feature-icon-security">
                 <i class="fas fa-shield-alt"></i>
             </div>
             <h3 class="mb-1">{{ analysis_counts.get('security', 0) }}</h3>
@@ -41,7 +41,7 @@
     </div>
     <div class="col-md-3">
         <div class="card text-center p-4">
-            <div class="feature-icon mx-auto" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+            <div class="feature-icon mx-auto feature-icon-threat">
                 <i class="fas fa-exclamation-triangle"></i>
             </div>
             <h3 class="mb-1">{{ analysis_counts.get('threats', 0) }}</h3>
@@ -94,7 +94,7 @@
                                         {{ analysis.type|capitalize }}
                                     </span>
                                 </td>
-                                <td class="text-truncate" style="max-width: 200px;">{{ analysis.target }}</td>
+                                <td class="text-truncate analysis-target-cell">{{ analysis.target }}</td>
                                 <td class="text-muted small">{{ analysis.timestamp }}</td>
                             </tr>
                             {% endfor %}
@@ -140,6 +140,30 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .feature-icon-file {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    }
+
+    .feature-icon-url {
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+    }
+
+    .feature-icon-security {
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+
+    .feature-icon-threat {
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+    }
+
+    .analysis-target-cell {
+        max-width: 200px;
+    }
+</style>
 {% endblock %}
 
 {% block extra_js %}

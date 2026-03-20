@@ -11,7 +11,7 @@
 {% if error %}
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
     <i class="fas fa-exclamation-triangle me-2"></i>{{ error }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" title="Close alert" aria-label="Close alert"></button>
 </div>
 {% endif %}
 
@@ -134,10 +134,47 @@
 </div>
 
 <!-- Results Container -->
-<div class="results-container" id="resultsContainer" style="display: none;">
+<div class="results-container d-none" id="resultsContainer">
     <h4 class="mb-4"><i class="fas fa-clipboard-list me-2 text-primary"></i>Analysis Results</h4>
     <div id="resultsContent"></div>
 </div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    #resultsContent .result-table {
+        table-layout: fixed;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    #resultsContent .result-table td {
+        vertical-align: top;
+        line-height: 1.35;
+        padding: 0.45rem 0.5rem;
+    }
+
+    #resultsContent .result-table .key-cell {
+        width: 34%;
+        color: var(--text-muted) !important;
+        white-space: nowrap;
+    }
+
+    #resultsContent .result-table .value-cell {
+        width: 66%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    #resultsContent .result-table.hash-table .key-cell {
+        width: 26%;
+    }
+
+    #resultsContent .result-table.hash-table .value-cell {
+        width: 74%;
+        font-size: 0.86rem;
+    }
+</style>
 {% endblock %}
 
 {% block extra_js %}
@@ -151,7 +188,7 @@
         const content = document.getElementById('resultsContent');
         
         spinner.classList.add('active');
-        results.style.display = 'none';
+        results.classList.add('d-none');
         
         try {
             const response = await fetch('/analyze-file', {
@@ -167,11 +204,11 @@
             } else {
                 content.innerHTML = `<div class="alert alert-danger"><i class="fas fa-exclamation-circle me-2"></i>${data.error}</div>`;
             }
-            results.style.display = 'block';
+            results.classList.remove('d-none');
         } catch (error) {
             spinner.classList.remove('active');
             content.innerHTML = `<div class="alert alert-danger"><i class="fas fa-exclamation-circle me-2"></i>Error: ${error.message}</div>`;
-            results.style.display = 'block';
+            results.classList.remove('d-none');
         }
     });
 
@@ -184,7 +221,7 @@
         const content = document.getElementById('resultsContent');
         
         spinner.classList.add('active');
-        results.style.display = 'none';
+        results.classList.add('d-none');
         
         try {
             const response = await fetch('/analyze-url', {
@@ -200,11 +237,11 @@
             } else {
                 content.innerHTML = `<div class="alert alert-danger"><i class="fas fa-exclamation-circle me-2"></i>${data.error}</div>`;
             }
-            results.style.display = 'block';
+            results.classList.remove('d-none');
         } catch (error) {
             spinner.classList.remove('active');
             content.innerHTML = `<div class="alert alert-danger"><i class="fas fa-exclamation-circle me-2"></i>Error: ${error.message}</div>`;
-            results.style.display = 'block';
+            results.classList.remove('d-none');
         }
     });
 
@@ -216,11 +253,11 @@
                     <div class="card">
                         <div class="card-header"><i class="fas fa-file me-2"></i>File Information</div>
                         <div class="card-body">
-                            <table class="table table-sm">
-                                <tr><td class="text-muted">Name</td><td>${data.file_info?.name || 'N/A'}</td></tr>
-                                <tr><td class="text-muted">Size</td><td>${formatFileSize(data.file_info?.size)}</td></tr>
-                                <tr><td class="text-muted">MIME Type</td><td>${data.file_type?.mime_type || 'N/A'}</td></tr>
-                                <tr><td class="text-muted">Extension</td><td>${data.file_type?.extension || 'N/A'}</td></tr>
+                            <table class="table table-sm result-table">
+                                <tr><td class="key-cell">Name</td><td class="value-cell">${data.file_info?.name || 'N/A'}</td></tr>
+                                <tr><td class="key-cell">Size</td><td class="value-cell">${formatFileSize(data.file_info?.size)}</td></tr>
+                                <tr><td class="key-cell">MIME Type</td><td class="value-cell">${data.file_type?.mime_type || 'N/A'}</td></tr>
+                                <tr><td class="key-cell">Extension</td><td class="value-cell">${data.file_type?.extension || 'N/A'}</td></tr>
                             </table>
                         </div>
                     </div>
@@ -229,9 +266,9 @@
                     <div class="card">
                         <div class="card-header"><i class="fas fa-hashtag me-2"></i>Hash Values</div>
                         <div class="card-body">
-                            <table class="table table-sm">
-                                <tr><td class="text-muted">MD5</td><td class="text-break small">${data.hashes?.md5 || 'N/A'}</td></tr>
-                                <tr><td class="text-muted">SHA256</td><td class="text-break small">${data.hashes?.sha256 || 'N/A'}</td></tr>
+                            <table class="table table-sm result-table hash-table">
+                                <tr><td class="key-cell">MD5</td><td class="value-cell">${data.hashes?.md5 || 'N/A'}</td></tr>
+                                <tr><td class="key-cell">SHA256</td><td class="value-cell">${data.hashes?.sha256 || 'N/A'}</td></tr>
                             </table>
                         </div>
                     </div>
@@ -288,11 +325,11 @@
                     <div class="card">
                         <div class="card-header"><i class="fas fa-globe me-2"></i>URL Information</div>
                         <div class="card-body">
-                            <table class="table table-sm">
-                                <tr><td class="text-muted">URL</td><td class="text-break">${data.url || 'N/A'}</td></tr>
-                                <tr><td class="text-muted">Domain</td><td>${data.domain || 'N/A'}</td></tr>
-                                <tr><td class="text-muted">Scheme</td><td>${data.scheme || 'N/A'}</td></tr>
-                                <tr><td class="text-muted">IP Address</td><td>${data.security_info?.ip || 'N/A'}</td></tr>
+                            <table class="table table-sm result-table">
+                                <tr><td class="key-cell">URL</td><td class="value-cell">${data.url || 'N/A'}</td></tr>
+                                <tr><td class="key-cell">Domain</td><td class="value-cell">${data.domain || 'N/A'}</td></tr>
+                                <tr><td class="key-cell">Scheme</td><td class="value-cell">${data.scheme || 'N/A'}</td></tr>
+                                <tr><td class="key-cell">IP Address</td><td class="value-cell">${data.security_info?.ip || 'N/A'}</td></tr>
                             </table>
                         </div>
                     </div>
@@ -301,11 +338,11 @@
                     <div class="card">
                         <div class="card-header"><i class="fas fa-server me-2"></i>Response Info</div>
                         <div class="card-body">
-                            <table class="table table-sm">
-                                <tr><td class="text-muted">Status Code</td><td>${data.response_info?.status_code || 'N/A'}</td></tr>
-                                <tr><td class="text-muted">Content Type</td><td>${data.response_info?.content_type || 'N/A'}</td></tr>
-                                <tr><td class="text-muted">Server</td><td>${data.response_info?.server || 'N/A'}</td></tr>
-                                <tr><td class="text-muted">Response Time</td><td>${data.response_info?.response_time?.toFixed(3)}s</td></tr>
+                            <table class="table table-sm result-table">
+                                <tr><td class="key-cell">Status Code</td><td class="value-cell">${data.response_info?.status_code || 'N/A'}</td></tr>
+                                <tr><td class="key-cell">Content Type</td><td class="value-cell">${data.response_info?.content_type || 'N/A'}</td></tr>
+                                <tr><td class="key-cell">Server</td><td class="value-cell">${data.response_info?.server || 'N/A'}</td></tr>
+                                <tr><td class="key-cell">Response Time</td><td class="value-cell">${data.response_info?.response_time?.toFixed(3)}s</td></tr>
                             </table>
                         </div>
                     </div>
@@ -330,11 +367,11 @@
                 <div class="card mt-4">
                     <div class="card-header"><i class="fas fa-code me-2"></i>Content Analysis</div>
                     <div class="card-body">
-                        <table class="table table-sm">
-                            <tr><td class="text-muted">Page Title</td><td>${data.content_info.title || 'N/A'}</td></tr>
-                            <tr><td class="text-muted">Links Count</td><td>${data.content_info.links_count || 0}</td></tr>
-                            <tr><td class="text-muted">Images Count</td><td>${data.content_info.images_count || 0}</td></tr>
-                            <tr><td class="text-muted">Scripts Count</td><td>${data.content_info.scripts_count || 0}</td></tr>
+                        <table class="table table-sm result-table">
+                            <tr><td class="key-cell">Page Title</td><td class="value-cell">${data.content_info.title || 'N/A'}</td></tr>
+                            <tr><td class="key-cell">Links Count</td><td class="value-cell">${data.content_info.links_count || 0}</td></tr>
+                            <tr><td class="key-cell">Images Count</td><td class="value-cell">${data.content_info.images_count || 0}</td></tr>
+                            <tr><td class="key-cell">Scripts Count</td><td class="value-cell">${data.content_info.scripts_count || 0}</td></tr>
                         </table>
                     </div>
                 </div>
@@ -351,7 +388,13 @@
         // Render security gauge
         if (data.visualizations?.security_gauge) {
             try {
-                Plotly.newPlot('security_gauge', data.visualizations.security_gauge.data, data.visualizations.security_gauge.layout);
+                const gaugeLayout = {
+                    ...data.visualizations.security_gauge.layout,
+                    paper_bgcolor: 'rgba(0,0,0,0)',
+                    plot_bgcolor: 'rgba(0,0,0,0)',
+                    font: { color: '#e2e8f0' }
+                };
+                Plotly.newPlot('security_gauge', data.visualizations.security_gauge.data, gaugeLayout);
             } catch (e) {
                 console.log('Could not render security gauge');
             }

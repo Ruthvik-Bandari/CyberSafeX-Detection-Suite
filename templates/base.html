@@ -38,6 +38,7 @@
         
         .navbar {
             background: rgba(30, 41, 59, 0.95) !important;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(99, 102, 241, 0.2);
         }
@@ -179,6 +180,11 @@
         
         .table {
             color: var(--text-light);
+            --bs-table-bg: transparent;
+            --bs-table-striped-bg: rgba(99, 102, 241, 0.08);
+            --bs-table-hover-bg: rgba(99, 102, 241, 0.14);
+            --bs-table-border-color: rgba(99, 102, 241, 0.1);
+            background-color: transparent !important;
         }
         
         .table thead th {
@@ -190,6 +196,18 @@
         .table td, .table th {
             border-color: rgba(99, 102, 241, 0.1);
             color: var(--text-light);
+            background-color: transparent !important;
+        }
+
+        .table>:not(caption)>*>* {
+            background-color: transparent !important;
+            color: var(--text-light);
+        }
+
+        /* Plotly dark-theme fallback */
+        .js-plotly-plot .plotly .bg,
+        .js-plotly-plot .plotly .subplot .bg {
+            fill: transparent !important;
         }
 
         .table-hover tbody tr:hover {
@@ -357,7 +375,7 @@
             <a class="navbar-brand" href="/">
                 <i class="fas fa-shield-alt me-2"></i>CyberSafeX
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -382,7 +400,7 @@
                 {% for category, message in messages %}
                     <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
                         {{ message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" title="Close alert" aria-label="Close alert"></button>
                     </div>
                 {% endfor %}
             {% endif %}

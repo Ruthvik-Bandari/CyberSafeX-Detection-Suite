@@ -35,7 +35,7 @@
                                 {{ analysis.type|capitalize }}
                             </span>
                         </td>
-                        <td class="text-truncate" style="max-width: 200px;" title="{{ analysis.target }}">
+                        <td class="text-truncate history-target-cell" title="{{ analysis.target }}">
                             {{ analysis.target }}
                         </td>
                         <td>
@@ -59,7 +59,7 @@
                         </td>
                         <td class="text-muted small">{{ analysis.timestamp }}</td>
                         <td>
-                            <button class="btn btn-sm btn-outline-primary" onclick="viewDetails({{ analysis.id }}, {{ analysis.result | tojson | e }})">
+                            <button class="btn btn-sm btn-outline-primary" onclick="viewDetails({{ analysis.id }}, {{ analysis.result | tojson | e }})" title="View analysis details" aria-label="View analysis details">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </td>
@@ -74,27 +74,41 @@
 <!-- Pagination -->
 {% if total_pages > 1 %}
 <nav class="mt-4">
-    <ul class="pagination justify-content-center">
-        <li class="page-item {{ 'disabled' if page == 1 else '' }}">
-            <a class="page-link" href="?page={{ page - 1 }}">
+    <div class="pagination justify-content-center">{%- if page == 1 -%}
+        <span class="page-link disabled" title="Previous page" aria-label="Previous page">
                 <i class="fas fa-chevron-left"></i>
+                <span class="visually-hidden">Previous</span>
+        </span>
+        {%- else -%}
+        <span class="page-item">
+            <a class="page-link" href="?page={{ page - 1 }}" title="Previous page" aria-label="Previous page">
+                <i class="fas fa-chevron-left"></i>
+                <span class="visually-hidden">Previous</span>
             </a>
-        </li>
-        {% for p in range(1, total_pages + 1) %}
-            {% if p == page %}
-                <li class="page-item active"><span class="page-link">{{ p }}</span></li>
-            {% elif p == 1 or p == total_pages or (p >= page - 2 and p <= page + 2) %}
-                <li class="page-item"><a class="page-link" href="?page={{ p }}">{{ p }}</a></li>
-            {% elif p == page - 3 or p == page + 3 %}
-                <li class="page-item disabled"><span class="page-link">...</span></li>
-            {% endif %}
-        {% endfor %}
-        <li class="page-item {{ 'disabled' if page == total_pages else '' }}">
-            <a class="page-link" href="?page={{ page + 1 }}">
+        </span>
+        {%- endif -%}
+        {%- for p in range(1, total_pages + 1) -%}
+            {%- if p == page -%}
+        <span class="page-item active"><span class="page-link">{{ p }}</span></span>
+            {%- elif p == 1 or p == total_pages or (p >= page - 2 and p <= page + 2) -%}
+        <span class="page-item"><a class="page-link" href="?page={{ p }}" title="Go to page {{ p }}" aria-label="Go to page {{ p }}">{{ p }}</a></span>
+            {%- elif p == page - 3 or p == page + 3 -%}
+        <span class="page-item disabled"><span class="page-link">...</span></span>
+            {%- endif -%}
+        {%- endfor -%}
+        {%- if page == total_pages -%}
+        <span class="page-link disabled" title="Next page" aria-label="Next page">
                 <i class="fas fa-chevron-right"></i>
+                <span class="visually-hidden">Next</span>
+        </span>
+        {%- else -%}
+        <span class="page-item">
+            <a class="page-link" href="?page={{ page + 1 }}" title="Next page" aria-label="Next page">
+                <i class="fas fa-chevron-right"></i>
+                <span class="visually-hidden">Next</span>
             </a>
-        </li>
-    </ul>
+        </span>
+        {%- endif -%}</div>
 </nav>
 {% endif %}
 
@@ -114,13 +128,13 @@
 <!-- Details Modal -->
 <div class="modal fade" id="detailsModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="background: var(--bg-card); color: var(--text-light);">
+        <div class="modal-content details-modal-content">
             <div class="modal-header border-bottom border-secondary">
                 <h5 class="modal-title"><i class="fas fa-info-circle me-2"></i>Analysis Details</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" title="Close details" aria-label="Close details"></button>
             </div>
             <div class="modal-body">
-                <pre id="detailsContent" class="bg-dark p-3 rounded" style="max-height: 500px; overflow: auto;"></pre>
+                <pre id="detailsContent" class="bg-dark p-3 rounded details-content"></pre>
             </div>
             <div class="modal-footer border-top border-secondary">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -132,6 +146,20 @@
 
 {% block extra_css %}
 <style>
+    .history-target-cell {
+        max-width: 200px;
+    }
+
+    .details-modal-content {
+        background: var(--bg-card);
+        color: var(--text-light);
+    }
+
+    .details-content {
+        max-height: 500px;
+        overflow: auto;
+    }
+
     .page-link {
         background: var(--bg-card);
         border-color: rgba(99, 102, 241, 0.3);

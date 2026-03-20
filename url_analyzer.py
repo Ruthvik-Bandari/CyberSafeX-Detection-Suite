@@ -12,6 +12,11 @@ class URLAnalyzer:
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
+        self.vulnerabilities = {
+            'sql_injection': ["' OR '1'='1", '" OR "1"="1', "' UNION SELECT NULL --"],
+            'xss': ['<script>alert(1)</script>', '" onmouseover="alert(1)'],
+            'path_traversal': ['../../etc/passwd', '..\\..\\windows\\win.ini']
+        }
 
     def analyze_url(self, url):
         # Basic validation
@@ -29,8 +34,9 @@ class URLAnalyzer:
             # Parse URL
             parsed_url = urllib.parse.urlparse(url)
             domain = parsed_url.netloc
+            hostname = parsed_url.hostname
 
-            if not domain:
+            if not hostname:
                 return {
                     'success': False,
                     'error': 'Invalid URL format',
@@ -52,7 +58,7 @@ class URLAnalyzer:
 
             # DNS lookup
             try:
-                ip = socket.gethostbyname(domain)
+                ip = socket.gethostbyname(hostname)
                 results['security_info']['ip'] = ip
             except socket.gaierror:
                 results['security_info']['ip'] = 'Could not resolve DNS'
