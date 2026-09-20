@@ -8,3 +8,11 @@ uploads/
 cases/
 venv/
 .env
+
+# Runtime forensic artifacts
+*.log
+*.sqlite
+uploads/
+cases/
+DS_Store
+.DS_Store
